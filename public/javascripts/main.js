@@ -44,7 +44,7 @@ $(function(){
         if(timeString != prevTime){
             prevTime = timeString;
             $(".time").text(timeString);
-            $(".date").text(ordinal_suffix_of(date.getDate()) + ", " + months[date.getMonth()] + ", " + date.getFullYear());
+            $(".date").text(ordinal_suffix_of(date.getDate()) + " " + months[date.getMonth()] + " " + date.getFullYear());
         }
     });
 
