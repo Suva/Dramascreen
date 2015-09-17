@@ -1,11 +1,11 @@
-var socket = null;
+var io = null;
 
 module.exports = {
     init: function(sock){
-        socket = sock;
+        io = sock;
     },
 
     sendMessage: function(title, message){
-        socket.emit('message', {title: title, message: message});
+        io.emit('message', {title: title, message: message});
     }
 };
