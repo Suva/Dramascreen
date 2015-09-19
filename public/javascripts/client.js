@@ -19,6 +19,8 @@ $(function(){
    });
 
     function log(msg){
-        $("#screen").append($("<div>").text(msg));
+        var scr = $("#screen");
+        scr.append($("<div>").text(msg));
+        scr.scrollTop(scr[0].scrollHeight);
     }
 });
