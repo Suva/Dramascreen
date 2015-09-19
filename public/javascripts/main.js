@@ -35,7 +35,12 @@ $(function(){
         "December"
     ];
 
-    var audio = new Audio('sounds/drama.mp3');
+
+    var audio = {
+        error: new Audio('sounds/drama.mp3'),
+        warning: new Audio('sounds/alarm.mp3'),
+        notice: new Audio('sounds/beep.mp3')
+    };
 
     var prevTime = null;
     setInterval(function(){
@@ -51,20 +56,39 @@ $(function(){
     var socket = io();
     var turnOffTimeout;
 
-    socket.on("message", function(message){
-        $(".title").text(message.title);
-        $(".message").text(message.message);
-        $("#screen").addClass("flipped");
-        audio.play();
 
-        if(turnOffTimeout) {
+    socket.on("message", function(message){
+        setScreenDisplay(message);
+        playSound(message);
+        initFlipbackTimeout();
+    });
+
+    function initFlipbackTimeout() {
+        if (turnOffTimeout) {
             clearTimeout(turnOffTimeout);
         }
-
-        turnOffTimeout = setTimeout(function(){
+        turnOffTimeout = setTimeout(function () {
             turnOffTimeout = null;
             $("#screen").removeClass("flipped");
-
         }, 20000);
-    });
+    }
+
+    function playSound(message){
+        if(audio[message.type]){
+            audio[message.type].play();
+        }
+    }
+
+    function setScreenDisplay(message) {
+        $(".title").text(message.title);
+        $(".message").text(message.message);
+        $("#screen")
+            .removeClass("error")
+            .removeClass("notice")
+            .removeClass("warning")
+            .removeClass("info")
+            .addClass("flipped")
+            .addClass(message.type);
+    }
+
 });

@@ -6,6 +6,7 @@ body, html {
     background-color: black;
     text-align: center;
     font-family: "Fjalla One", sans-serif;
+    text-shadow: 5px 5px 10px rgba(0,0,0,0.3);
 }
 
 h1 {
@@ -24,6 +25,10 @@ body {
     transition: 3s;
     transform-style: preserve-3d;
     position: relative;
+}
+
+#screen.notice, #screen.warning {
+    transition: 0.5s;
 }
 
 #screen, .front, .back {
@@ -66,6 +71,22 @@ body {
 }
 
 .back {
-    background-color: #7b0000;
     transform: rotateY(180deg);
+    box-shadow: inset 0 0 30vw 5vw rgba(0,0,0,0.2);
+}
+
+.error .back{
+    background-color: #7b0000;
+}
+
+.notice .back {
+    background-color: #007b00;
+}
+
+.warning .back {
+    background-color: rgb(149, 75, 0);
+}
+
+.info .back {
+    background-color: #444444;
 }

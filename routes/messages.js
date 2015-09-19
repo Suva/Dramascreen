@@ -5,7 +5,7 @@ module.exports = {
         io = sock;
     },
 
-    sendMessage: function(title, message){
-        io.emit('message', {title: title, message: message});
+    sendMessage: function(title, message, type){
+        io.emit('message', {title: title, message: message, type: type});
     }
 };
