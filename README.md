@@ -34,7 +34,7 @@ http://localhost:3000/message/[level]
 
 Where level is one of:
 
-* info (no sound, gray background)
+* info (no sound, blue background)
 * notice (bell sound, green background)
 * warning (buzzing sound, orange background)
 * error (dramatic sound, red background)
