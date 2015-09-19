@@ -4,7 +4,11 @@ var msg = require("./messages");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
+});
+
+router.get('/client', function(req, res, next) {
+    res.render('client');
 });
 
 router.post('/message/*', function(req, res, next) {

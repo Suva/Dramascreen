@@ -72,7 +72,7 @@ body {
 
 .back {
     transform: rotateY(180deg);
-    box-shadow: inset 0 0 30vw 5vw rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 20vw 10vw rgba(0,0,0,0.2);
 }
 
 .error .back{
@@ -84,9 +84,9 @@ body {
 }
 
 .warning .back {
-    background-color: rgb(149, 75, 0);
+    background-color: rgb(189, 97, 0);
 }
 
 .info .back {
-    background-color: #444444;
+    background-color: #7b7b7b;
 }
