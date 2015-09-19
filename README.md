@@ -5,7 +5,8 @@ This is an info screen software for offices or callcenters or wherever you may n
 to be delivered.
 
 In it's normal state the software will display a 24h clock with date. This can be replaced with a notice by using
-REST API. There are different levels of messages with different sounds and screen color.
+REST API. There are different levels of messages with different sounds and screen color. Message is displayed for 20
+seconds, after that the screen returns to clock display.
 
 Installation
 ============
