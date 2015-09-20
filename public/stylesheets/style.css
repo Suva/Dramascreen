@@ -7,6 +7,7 @@ body, html {
     text-align: center;
     font-family: "Fjalla One", sans-serif;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    cursor: none;
 }
 
 h1 {
@@ -88,5 +89,5 @@ body {
 }
 
 .info .back {
-    background-color: #252651;
+    background-color: #00007b;
 }
