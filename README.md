@@ -1,5 +1,5 @@
-DWN - Info Screen Software
-==========================
+Dramascreen - Info Screen Software
+==================================
 
 This is an info screen software for offices or callcenters or wherever you may need notices about some important events
 to be delivered.
