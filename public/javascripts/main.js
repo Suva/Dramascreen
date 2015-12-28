@@ -83,6 +83,9 @@ $(function(){
         if(isYoutube(message)){
             var vId = message.message.match(/v=([A-Za-z0-9_-]+)/)[1];
             if(vId && player){
+                if (turnOffTimeout) {
+                    clearTimeout(turnOffTimeout);
+                }
                 player.loadVideoById(vId, 0, "large");
                 $(".back-video").show();
                 $(".back").hide();
