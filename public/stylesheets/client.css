@@ -3,7 +3,14 @@ html {
     background-color: #CCCCCC;
     box-shadow: inset 0 0 50vw 0 rgba(0,0,0,0.3);
 }
+
 body {
     background: none;
+}
+
+img {
+    width: 102.5%;
+    margin-left: -1.25%;
+    padding: 0 15px;
 }
 
