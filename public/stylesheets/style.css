@@ -7,6 +7,9 @@ body, html {
     text-align: center;
     font-family: "Fjalla One", sans-serif;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+body.mouseHidden {
     cursor: none;
 }
 
@@ -23,22 +26,22 @@ body {
 }
 
 #screen {
-    transition: 3s;
+    transition: 0.5s;
     transform-style: preserve-3d;
     position: relative;
 }
 
-#screen.notice, #screen.warning {
-    transition: 0.5s;
+#screen.error {
+    transition: 3s;
 }
 
-#screen, .front, .back {
+#screen, .front, .back, .back-video {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 
-.front, .back {
+.front, .back, .back-video {
     position: absolute;
 }
 
@@ -71,9 +74,22 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.back {
+.back, .back-video {
     transform: rotateY(180deg);
     box-shadow: inset 0 0 20vw 10vw rgba(0,0,0,0.2);
+}
+
+.back-video {
+    display: none;
+    overflow: hidden;
+}
+
+.back-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
 .error .back{

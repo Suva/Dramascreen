@@ -7,7 +7,7 @@ html
         script(src="/socket.io/socket.io.js")
         script(src='//code.jquery.com/jquery-2.1.4.min.js')
         script(src='/javascripts/main.js')
-    body
+    body.mouseHidden
         #screen
             .front
                 .timeBlock
@@ -16,3 +16,5 @@ html
             .back
                 h1.title SOME HORRIBLE THING HAPPENED
                 .message All Things are fucked up
+            .back-video
+                iframe(id="player" src="https://www.youtube.com/embed/?autoplay=1&controls=0&enablejsapi=1&modestbranding=1&showinfo=0&rel=0")
