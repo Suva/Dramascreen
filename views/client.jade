@@ -7,34 +7,36 @@ html
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
         script(src='/javascripts/client.js')
         link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        link(rel='stylesheet', href='stylesheets/client.css')
     body
         .container
-            .page-header
-                h1 Dramascreen API Client
+            .panel.panel-default
+                .panel-body
+                    .row
+                        img.drama-title(src="images/dramaheader.png", width="100%")
+                    .row(style="padding: 2% 2% 0 2%")
+                        .col-md-7
+                            .panel.panel-default
+                                .panel-heading
+                                    b Send Message
+                                .panel-body
+                                    form
+                                        .form-group
+                                            label(for="title") Title
+                                            input.form-control#title
 
-            .row
-                .col-md-7
-                    .panel.panel-default
-                        .panel-heading
-                            b Send Message
-                        .panel-body
-                            form
-                                .form-group
-                                    label(for="title") Title
-                                    input.form-control#title
+                                        .form-group
+                                            label(for="message") Message
+                                            textarea.form-control#message
 
-                                .form-group
-                                    label(for="message") Message
-                                    textarea.form-control#message
-
-                                .btn-group.btn-group-justified
-                                    .btn-group
-                                        button.btn.btn-primary(data-level="info") Info
-                                    .btn-group
-                                        button.btn.btn-success(data-level="notice") Notice
-                                    .btn-group
-                                        button.btn.btn-warning(data-level="warning") Warning
-                                    .btn-group
-                                        button.btn.btn-danger(data-level="error") Drama!
-                .col-md-5
-                    iframe(style="height: 275px; width: 100%; border:0", src="/")
+                                        .btn-group.btn-group-justified
+                                            .btn-group
+                                                button.btn.btn-primary(data-level="info") Info
+                                            .btn-group
+                                                button.btn.btn-success(data-level="notice") Notice
+                                            .btn-group
+                                                button.btn.btn-warning(data-level="warning") Warning
+                                            .btn-group
+                                                button.btn.btn-danger(data-level="error") Drama!
+                        .col-md-5
+                            iframe(style="height: 275px; width: 100%; border:0", src="/")
