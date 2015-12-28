@@ -13,22 +13,24 @@ html
 
             .row
                 .col-md-6
-                    form
-                        .form-group
-                            label(for="level") Level
-                            select.form-control#level
-                                option info
-                                option notice
-                                option warning
-                                option error
-                        .form-group
-                            label(for="title") Title
-                            input.form-control#title
+                    .panel.panel-default
+                        .panel-body
+                            form
+                                .form-group
+                                    label(for="level") Level
+                                    select.form-control#level
+                                        option info
+                                        option notice
+                                        option warning
+                                        option error
+                                .form-group
+                                    label(for="title") Title
+                                    input.form-control#title
 
-                        .form-group
-                            label(for="message") Title
-                            textarea.form-control#message
+                                .form-group
+                                    label(for="message") Title
+                                    textarea.form-control#message
 
-                        button.btn.btn-default(id="send") Send
+                                button.btn.btn-default(id="send") Send
                 .col-md-6
-                    #screen.well(style="height: 276px; overflow: auto;")
+                    iframe(style="height: 307px; width: 100%; border:0", src="/")
