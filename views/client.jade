@@ -1,10 +1,11 @@
 doctype html
 html
     head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
         title Dramascreen Client
         script(src='//code.jquery.com/jquery-2.1.4.min.js')
-        script(src='/javascripts/client.js')
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+        script(src='/javascripts/client.js')
         link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     body
         .container
@@ -12,7 +13,7 @@ html
                 h1 Dramascreen API Client
 
             .row
-                .col-md-6
+                .col-md-7
                     .panel.panel-default
                         .panel-heading
                             b Send Message
@@ -35,5 +36,5 @@ html
                                         button.btn.btn-warning(data-level="warning") Warning
                                     .btn-group
                                         button.btn.btn-danger(data-level="error") Drama!
-                .col-md-6
+                .col-md-5
                     iframe(style="height: 275px; width: 100%; border:0", src="/")
