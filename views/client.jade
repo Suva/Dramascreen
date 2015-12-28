@@ -14,23 +14,26 @@ html
             .row
                 .col-md-6
                     .panel.panel-default
+                        .panel-heading
+                            b Send Message
                         .panel-body
                             form
-                                .form-group
-                                    label(for="level") Level
-                                    select.form-control#level
-                                        option info
-                                        option notice
-                                        option warning
-                                        option error
                                 .form-group
                                     label(for="title") Title
                                     input.form-control#title
 
                                 .form-group
-                                    label(for="message") Title
+                                    label(for="message") Message
                                     textarea.form-control#message
 
-                                button.btn.btn-default(id="send") Send
+                                .btn-group.btn-group-justified
+                                    .btn-group
+                                        button.btn.btn-primary(data-level="info") Info
+                                    .btn-group
+                                        button.btn.btn-success(data-level="notice") Notice
+                                    .btn-group
+                                        button.btn.btn-warning(data-level="warning") Warning
+                                    .btn-group
+                                        button.btn.btn-danger(data-level="error") Drama!
                 .col-md-6
-                    iframe(style="height: 307px; width: 100%; border:0", src="/")
+                    iframe(style="height: 275px; width: 100%; border:0", src="/")
