@@ -1,5 +1,5 @@
 $(function () {
-    $("button").click(function (ev) {
+    $(".message-form button").click(function (ev) {
         ev.preventDefault();
 
         var level = $(ev.target).data("level");
@@ -12,6 +12,10 @@ $(function () {
         var url = "/message/" + level;
 
         $.post(url, msg)
+    });
+
+    $(".nopebutton").click(function(){
+        $.post("/nope");
     });
 
     var screenResizeTimeout = null;

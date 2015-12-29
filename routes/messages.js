@@ -13,7 +13,9 @@ module.exports = {
 
     sendMessage: function(title, message, type){
         io.emit('message', {title: title, message: message, type: type});
+    },
+
+    nope: function(){
+        io.emit('nope');
     }
-
-
 };

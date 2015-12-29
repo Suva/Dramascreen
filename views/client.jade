@@ -22,7 +22,7 @@ html
                                 .panel-heading
                                     b Send Message
                                 .panel-body
-                                    form
+                                    form.message-form
                                         .form-group
                                             label(for="title") Title
                                             input.form-control#title
@@ -42,3 +42,8 @@ html
                                                 button.btn.btn-danger(data-level="error") Drama!
                         .col-md-5
                             iframe(style="height: 275px; width: 100%; border:0", src="/")
+                .panel-footer.text-right
+                    button.btn.nopebutton
+                       span.glyphicon.glyphicon-thumbs-down
+                       span &nbsp;&nbspNOPE!
+

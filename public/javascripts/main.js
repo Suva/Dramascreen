@@ -79,6 +79,18 @@ $(function(){
 
     });
 
+    socket.on("nope", function(){
+        if (turnOffTimeout) {
+            clearTimeout(turnOffTimeout);
+            turnOffTimeout = null;
+        }
+        if(player) {
+            player.stopVideo();
+            player.clearVideo();
+        }
+        $("#screen").removeClass("flipped");
+    });
+
     socket.on("message", function(message){
         if(isYoutube(message)){
             var vId = message.message.match(/v=([A-Za-z0-9_-]+)/)[1];
