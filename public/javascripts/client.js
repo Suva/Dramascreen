@@ -3,15 +3,24 @@ $(function () {
         ev.preventDefault();
 
         var level = $(ev.target).data("level");
+        var title = $("#title").val().trim();
+        var message = $("#message").val().trim();
 
-        var msg = {
-            title: $("#title").val(),
-            message: $("#message").val()
-        };
+        if(title == "" && message == ""){
+            $(".client-panel").effect("shake");
+        } else {
+            var msg = {
+                title: title,
+                message: message
+            };
 
-        var url = "/message/" + level;
+            var url = "/message/" + level;
 
-        $.post(url, msg)
+            $("#title").val("");
+            $("#message").val("");
+
+            $.post(url, msg)
+        }
     });
 
     $(".nopebutton").click(function(){
