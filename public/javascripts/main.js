@@ -52,6 +52,11 @@ $(function(){
             prevTime = timeString;
             $(".time").text(timeString);
             $(".date").text(ordinal_suffix_of(date.getDate()) + " " + months[date.getMonth()] + " " + date.getFullYear());
+            if(date.getDay() == 5){
+                $(".day").addClass("friday").text("FRIDAY");
+            } else {
+                $(".day").removeClass("friday").text("NOT FRIDAY");
+            }
         }
     });
 
