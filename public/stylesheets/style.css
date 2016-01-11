@@ -67,16 +67,6 @@ body {
     margin-top: -5vw;
 }
 
-.day {
-    font-size: 2vw;
-    margin-top: 1vw;
-    color: #222;
-}
-
-.day.friday {
-    color: #FFF;
-}
-
 .timeBlock {
     margin-top: -5vh;
     position: absolute;
