@@ -13,14 +13,24 @@ router.get('/client', function(req, res, next) {
 
 router.post('/message/*', function(req, res, next) {
     var level = getLevel(req);
-    if(level &&
-        ((req.body.title && req.body.title.trim() != "") ||
-        (req.body.message && req.body.message.trim() != ""))
-    ){
+    var errors = [];
+
+    if(!level) {
+        errors.push("Unknown message level");
+    }
+
+    if(!((req.body.title && req.body.title.trim() != "") ||
+        (req.body.message && req.body.message.trim() != ""))) {
+        errors.push("Neither 'message' nor 'title' passed. Please check the post body is JSON object with " +
+        "title and/or message properties in it. Also make sure you have included Content-Type header identifying " +
+        "the message as application/json.");
+    }
+
+    if(errors.length == 0){
         msg.sendMessage(req.body.title, req.body.message, level);
         res.send({result: "OK", success: true});
     } else {
-        res.send({result: "FAIL - Unknown level", success: false});
+        res.send({result: "ERRORS - " + errors.join("; "), success: false});
     }
 });
 
@@ -31,7 +41,10 @@ router.post('/nope/', function(req, res, next) {
 
 
 function getLevel(req) {
+    console.log(req.params);
     var level = req.params[0];
+
+    console.log(level);
     if (["error", "warning", "notice", "info"].indexOf(level) < 0) {
         return false;
     }
