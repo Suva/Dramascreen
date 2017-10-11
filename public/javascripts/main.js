@@ -22,6 +22,8 @@ $(function(){
 
     var player;
 
+    var synth = window.speechSynthesis;
+
     var months = [
         "January",
         "February",
@@ -88,6 +90,11 @@ $(function(){
             player.stopVideo();
             player.clearVideo();
         }
+
+        if(synth) {
+            synth.cancel()
+        }
+
         $("#screen").removeClass("flipped");
     });
 
@@ -113,6 +120,7 @@ $(function(){
         } else {
             setScreenDisplay(message);
             playSound(message);
+            speakMessage(message);
             initFlipbackTimeout();
         }
     });
@@ -130,6 +138,21 @@ $(function(){
     function playSound(message){
         if(audio[message.type]){
             audio[message.type].play();
+        }
+    }
+
+    function speakMessage(message) {
+        if(synth) {
+            setTimeout(function () {
+                var say = new SpeechSynthesisUtterance(
+                    (message.title ? message.title + '... ' : '') +
+                    (message.message ? message.message : '')
+                );
+
+                say.rate = 0.8;
+
+                synth.speak(say);
+            }, message.type === 'error' ? 4000 : 1000)
         }
     }
 
