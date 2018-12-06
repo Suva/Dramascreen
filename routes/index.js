@@ -4,7 +4,8 @@ var msg = require("./messages");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+    console.log(req.query)
+    res.render('index', { theme: req.query.theme });
 });
 
 router.get('/client', function(req, res, next) {
