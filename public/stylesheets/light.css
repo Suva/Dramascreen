@@ -93,17 +93,17 @@ body {
 }
 
 .error .back{
-    background-color: #7b0000;
+    background-color: #d38e8c;
 }
 
 .notice .back {
-    background-color: #007b00;
+    background-color: #64a95d;
 }
 
 .warning .back {
-    background-color: rgb(75, 37, 0);
+    background-color: rgb(191, 157, 154);
 }
 
 .info .back {
-    background-color: #00007b;
+    background-color: #939bd3;
 }
